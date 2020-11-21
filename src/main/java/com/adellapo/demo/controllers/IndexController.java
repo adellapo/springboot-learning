@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,14 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.adellapo.demo.models.Usuario;
-import com.adellapo.demo.models.service.MiServicio;
+import com.adellapo.demo.models.service.IServicio;
 
 @Controller
 @RequestMapping("/app")
 public class IndexController {
 
+	@Qualifier("miServicioComplejo")
 	@Autowired
-	private MiServicio servicio;
+	private IServicio servicio;
 
 	@Value("${texto.indexcontroller.index.titulo}")
 	private String textoIndex;

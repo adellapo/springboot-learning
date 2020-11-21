@@ -3,30 +3,33 @@
 <head>
 <meta charset="UTF-8" />
 <title th:text="${titulo}">Insert title here</title>
-<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}"></link>
+<link
+  type="text/css"
+  rel="stylesheet"
+  th:href="@{/css/style.css}"
+></link>
 </head>
 <body>
-	
-	<div th:text="${objeto}"></div>
-	
-	<h1 class="color-rojo" th:text="${titulo}">Hola Mundo!</h1>
-	<h2 class="color-azul">Decorando estilos con recursos estaticos</h2>
-	<img th:src="@{/images/spring.png}"></img>
-
-	<table th:if="${!usuarios.isEmpty()}">
-		<thead>
-			<th>Nombre</th>
-			<th>Apellido</th>
-			<th>Email</th>
-		</thead>
-		<tbody>
-			<tr th:each="usuario : ${usuarios}">
-				<td th:text="${usuario.nombre}"></td>
-				<td th:text="${usuario.apellido}"></td>
-				<td th:text="${usuario.email}"></td>
-			</tr>
-		</tbody>
-	</table>
-
+  <div th:text="${objeto}"></div>
+  <h1
+    class="color-rojo"
+    th:text="${titulo}"
+  >Hola Mundo!</h1>
+  <h2 class="color-azul">Decorando estilos con recursos estaticos</h2>
+  <img th:src="@{/images/spring.png}"></img>
+  <table th:if="${!usuarios.isEmpty()}">
+    <thead>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+      <tr th:each="usuario : ${usuarios}">
+        <td th:text="${usuario.nombre}"></td>
+        <td th:text="${usuario.apellido}"></td>
+        <td th:text="${usuario.email}"></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
